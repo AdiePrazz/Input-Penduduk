@@ -67,26 +67,20 @@ public class MainActivity extends AppCompatActivity {
                     findViewById(rgStatus.getCheckedRadioButtonId());
             hasil = rb.getText().toString();
         }
-        /*if(rbL.isChecked())
-        {
-            tvHasil2 = rbL.getText().toString();
-        }
-        else if(rbP.isChecked())
-        {
-            tvHasil2 = rbP.getText().toString();
-        }*/
-
         if(hasil == null)
         {
             tvHasil2.setText("Tidak ada pilihan");
         }
-        else{
+        else
+        {
             String nama = etNama.getText().toString();
             String ttl = etTTL.getText().toString();
             String al = etAL.getText().toString();
             tvHasil.setText("Nama : "+nama + "\n" +"TTL : "+ttl + "\n" +"Alamat : "+al);
+
             tvHasil2.setText("Jenis Kelamin : " + hasil);
         }
+
 
         tvHasil3.setText("Umur : "+ umur.getSelectedItem().toString());
         String hasil2 = "Status :\n";
