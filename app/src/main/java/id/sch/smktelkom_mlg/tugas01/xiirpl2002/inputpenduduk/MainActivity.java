@@ -73,13 +73,14 @@ public class MainActivity extends AppCompatActivity {
         }
         else
         {
-            String nama = etNama.getText().toString();
-            String ttl = etTTL.getText().toString();
-            String al = etAL.getText().toString();
-            tvHasil.setText("Nama : "+nama + "\n" +"TTL : "+ttl + "\n" +"Alamat : "+al);
-
             tvHasil2.setText("Jenis Kelamin : " + hasil);
         }
+        if(isValid());
+        String nama = etNama.getText().toString();
+        String ttl = etTTL.getText().toString();
+        String al = etAL.getText().toString();
+        tvHasil.setText("Nama : "+nama + "\n" +"TTL : "+ttl + "\n" +"Alamat : "+al);
+
 
 
         tvHasil3.setText("Umur : "+ umur.getSelectedItem().toString());
@@ -91,6 +92,35 @@ public class MainActivity extends AppCompatActivity {
 
         if(hasil2.length()==startlen) hasil2+="Tidak ada pilihan";
 
+    }
+
+    private boolean isValid() {
+        boolean valid = true;
+
+        String nama = etNama.getText().toString();
+        String ttl = etNama.getText().toString();
+        String al = etNama.getText().toString();
+
+        if(nama.isEmpty())
+        {
+            etNama.setError("Kolom belum diisi");
+            valid = false;
+        }
+        else if(ttl.isEmpty())
+        {
+            etTTL.setError("Kolom belum diisi");
+            valid = false;
+        }
+        else if(al.isEmpty())
+        {
+            etAL.setError("Kolom belum diisi");
+            valid = false;
+        }
+        else
+        {
+            etNama.setError(null);
+        }
+        return valid;
     }
 
     private void doProcess() {
